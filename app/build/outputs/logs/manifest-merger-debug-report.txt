@@ -1,0 +1,406 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:2:1-60:12
+MERGED from [com.google.firebase:firebase-core:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.4.aar/17d7cf0af502d06b56fda294ab0052e9/AndroidManifest.xml:2:1-6:12
+MERGED from [com.android.support:design:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/84de2b73c56e6c4f43627706dde4ebe8/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/78cc4f65972cf316dd54371c0ac5411e/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/a491c8b81144a6e611a53f5e7eb545f4/AndroidManifest.xml:2:1-11:12
+MERGED from [com.google.firebase:firebase-auth:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.4.aar/a4a2f36fa2c37b5f2fef3e744a97d4e7/AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.firebase:firebase-database:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-database-11.0.4.aar/1ce13d2b2a99e803779e87684d19513b/AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:16:1-35:12
+MERGED from [com.google.android.gms:play-services-base:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/2c0f71558fb15799a11edaadb9a971f2/AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.firebase:firebase-database-connection:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-11.0.4.aar/95dce41a41b82dd3bfc99fc35b1a1578/AndroidManifest.xml:2:1-4:12
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:16:1-29:12
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:16:1-50:12
+MERGED from [com.google.firebase:firebase-common:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/058b615299184c6234e047eb49a17385/AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.4.aar/b6f4aafbf685d5cad13003e9d29d6988/AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/229b45779a1980d5039f07a6296c45fc/AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:support-v4:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/f7aa2d08416c882062598f84684e1caa/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.2.aar/736fe1a7df1ec9fc19010ecb3bde6c15/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/transition-27.0.2.aar/c5664b5c1d0dc031061e51f1b2d5c781/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/46f6f00a6e1ca5075aeee0c7f2c80905/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/6dcadbf0240a574018aebc7fc8f24746/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/e8c2d5138a87a54c2dd48e9af6b5a267/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/fbdc503c75b8f1700232bf80ce3d2a7f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/2f7397e80439616fede233a85a531ca3/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/7b863176afe717d33c9df3dd46cc303f/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/2e6920a0b8af9b4f929ffdf0addf0bee/AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/ticat/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/238a596fea4eb22a1d045c9b9aa43feb/AndroidManifest.xml:17:1-24:12
+INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:2:1-60:12
+INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:2:1-60:12
+	package
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:3:5-38
+		INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:2:1-60:12
+		INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:2:1-60:12
+		INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:20:5-66
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:8:5-71
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:8:22-68
+uses-permission#android.permission.READ_PROFILE
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:9:5-71
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:9:22-68
+uses-permission#android.permission.READ_CONTACTS
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:10:5-72
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:10:22-69
+application
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:12:5-58:19
+MERGED from [com.google.firebase:firebase-core:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.4.aar/17d7cf0af502d06b56fda294ab0052e9/AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-core:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.4.aar/17d7cf0af502d06b56fda294ab0052e9/AndroidManifest.xml:5:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/a491c8b81144a6e611a53f5e7eb545f4/AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/a491c8b81144a6e611a53f5e7eb545f4/AndroidManifest.xml:9:5-20
+MERGED from [com.google.firebase:firebase-auth:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.4.aar/a4a2f36fa2c37b5f2fef3e744a97d4e7/AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-auth:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.4.aar/a4a2f36fa2c37b5f2fef3e744a97d4e7/AndroidManifest.xml:19:5-20:19
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:24:5-34:19
+MERGED from [com.google.android.gms:play-services-base:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/2c0f71558fb15799a11edaadb9a971f2/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-base:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/2c0f71558fb15799a11edaadb9a971f2/AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:28:5-49:19
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:28:5-49:19
+MERGED from [com.google.firebase:firebase-common:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/058b615299184c6234e047eb49a17385/AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.firebase:firebase-common:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/058b615299184c6234e047eb49a17385/AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.4.aar/b6f4aafbf685d5cad13003e9d29d6988/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.4.aar/b6f4aafbf685d5cad13003e9d29d6988/AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/229b45779a1980d5039f07a6296c45fc/AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/229b45779a1980d5039f07a6296c45fc/AndroidManifest.xml:19:5-21:19
+	android:supportsRtl
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:17:9-35
+	android:label
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:15:9-41
+	android:roundIcon
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:16:9-54
+	android:icon
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:14:9-43
+	android:allowBackup
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:13:9-35
+	android:theme
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:18:9-40
+activity#com.ticatwolves.experto.activity.SplashScreen
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:19:9-27:20
+	android:theme
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:21:13-53
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:20:13-50
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:22:13-26:29
+action#android.intent.action.MAIN
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:23:17-69
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:23:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:25:17-77
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:25:27-74
+activity#com.ticatwolves.experto.activity.LoginActivity
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:28:9-30:73
+	android:parentActivityName
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:30:13-70
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:29:13-51
+activity#com.ticatwolves.experto.activity.RegistrationActivity
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:31:9-33:68
+	android:parentActivityName
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:33:13-65
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:32:13-58
+activity#com.ticatwolves.experto.admin.AdminHomeActivity
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:34:9-61
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:34:19-58
+activity#com.ticatwolves.experto.activity.ChooseModeActivity
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:35:9-37:72
+	android:theme
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:37:13-69
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:36:13-56
+activity#com.ticatwolves.experto.admin.AdminLoginActivity
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:38:9-41:56
+	android:parentActivityName
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:40:13-70
+	android:theme
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:41:13-53
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:39:13-53
+activity#com.ticatwolves.experto.guest.GuestActivity
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:42:9-44:73
+	android:parentActivityName
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:44:13-70
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:43:13-48
+activity#com.ticatwolves.experto.expert.ExpertHomeActivity
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:45:9-63
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:45:19-60
+activity#com.ticatwolves.experto.admin.AdminAddExpertActivity
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:46:9-48:69
+	android:parentActivityName
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:48:13-66
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:47:13-57
+activity#com.ticatwolves.experto.users.UserHomeActivity
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:49:9-52:59
+	android:label
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:51:13-61
+	android:theme
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:52:13-56
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:50:13-51
+activity#com.ticatwolves.experto.users.UserAskQueryActivity
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:53:9-55:68
+	android:parentActivityName
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:55:13-65
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:54:13-55
+activity#com.ticatwolves.experto.guest.GuestQueryActivity
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:56:9-62
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:56:19-59
+activity#com.ticatwolves.experto.expert.QuerySolutionActivity
+ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:57:9-75
+	android:name
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml:57:19-63
+uses-sdk
+INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+MERGED from [com.google.firebase:firebase-core:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.4.aar/17d7cf0af502d06b56fda294ab0052e9/AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-core:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-core-11.0.4.aar/17d7cf0af502d06b56fda294ab0052e9/AndroidManifest.xml:4:5-43
+MERGED from [com.android.support:design:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/84de2b73c56e6c4f43627706dde4ebe8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/84de2b73c56e6c4f43627706dde4ebe8/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/78cc4f65972cf316dd54371c0ac5411e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/78cc4f65972cf316dd54371c0ac5411e/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/a491c8b81144a6e611a53f5e7eb545f4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/a491c8b81144a6e611a53f5e7eb545f4/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-auth:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.4.aar/a4a2f36fa2c37b5f2fef3e744a97d4e7/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-auth:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-auth-11.0.4.aar/a4a2f36fa2c37b5f2fef3e744a97d4e7/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-database:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-database-11.0.4.aar/1ce13d2b2a99e803779e87684d19513b/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-database:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-database-11.0.4.aar/1ce13d2b2a99e803779e87684d19513b/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/2c0f71558fb15799a11edaadb9a971f2/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/2c0f71558fb15799a11edaadb9a971f2/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-database-connection:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-11.0.4.aar/95dce41a41b82dd3bfc99fc35b1a1578/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-database-connection:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-database-connection-11.0.4.aar/95dce41a41b82dd3bfc99fc35b1a1578/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-common:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/058b615299184c6234e047eb49a17385/AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-common:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/058b615299184c6234e047eb49a17385/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.4.aar/b6f4aafbf685d5cad13003e9d29d6988/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-tasks-11.0.4.aar/b6f4aafbf685d5cad13003e9d29d6988/AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/229b45779a1980d5039f07a6296c45fc/AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-basement:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/229b45779a1980d5039f07a6296c45fc/AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:support-v4:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/f7aa2d08416c882062598f84684e1caa/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-v4-27.0.2.aar/f7aa2d08416c882062598f84684e1caa/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.2.aar/736fe1a7df1ec9fc19010ecb3bde6c15/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-27.0.2.aar/736fe1a7df1ec9fc19010ecb3bde6c15/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/transition-27.0.2.aar/c5664b5c1d0dc031061e51f1b2d5c781/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/transition-27.0.2.aar/c5664b5c1d0dc031061e51f1b2d5c781/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/46f6f00a6e1ca5075aeee0c7f2c80905/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/46f6f00a6e1ca5075aeee0c7f2c80905/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/6dcadbf0240a574018aebc7fc8f24746/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/6dcadbf0240a574018aebc7fc8f24746/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/e8c2d5138a87a54c2dd48e9af6b5a267/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/e8c2d5138a87a54c2dd48e9af6b5a267/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/fbdc503c75b8f1700232bf80ce3d2a7f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-media-compat-27.0.2.aar/fbdc503c75b8f1700232bf80ce3d2a7f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/2f7397e80439616fede233a85a531ca3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/2f7397e80439616fede233a85a531ca3/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/7b863176afe717d33c9df3dd46cc303f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/7b863176afe717d33c9df3dd46cc303f/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/2e6920a0b8af9b4f929ffdf0addf0bee/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] /home/ticat/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/2e6920a0b8af9b4f929ffdf0addf0bee/AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/ticat/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/238a596fea4eb22a1d045c9b9aa43feb/AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/ticat/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/238a596fea4eb22a1d045c9b9aa43feb/AndroidManifest.xml:20:5-22:41
+INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+		ADDED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+		INJECTED from /home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:19:5-78
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:19:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:21:22-76
+uses-permission#android.permission.WAKE_LOCK
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:21:5-67
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:22:22-65
+receiver#com.google.android.gms.measurement.AppMeasurementReceiver
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:25:7-26:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:25:90-112
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:25:113-137
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:25:17-89
+receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:27:7-31:18
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:27:162-184
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:27:185-208
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:27:105-161
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:27:17-104
+intent-filter#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:28:11-30:27
+action#com.android.vending.INSTALL_REFERRER
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:29:15-76
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:29:23-74
+service#com.google.android.gms.measurement.AppMeasurementService
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:27:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-impl-11.0.4.aar/d72c38a057f576fb0878d6f2eeda67eb/AndroidManifest.xml:27:7-137
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:32:88-110
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:32:111-135
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:32:16-87
+service#com.google.android.gms.measurement.AppMeasurementJobService
+ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:33:7-197
+	android:enabled
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:33:148-170
+	android:exported
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:33:171-195
+	android:permission
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:33:91-147
+	android:name
+		ADDED from [com.google.firebase:firebase-analytics:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-analytics-11.0.4.aar/9f2cf13c8b947f1b3816b79d45abfc62/AndroidManifest.xml:33:16-90
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/2c0f71558fb15799a11edaadb9a971f2/AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/2c0f71558fb15799a11edaadb9a971f2/AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/2c0f71558fb15799a11edaadb9a971f2/AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-base-11.0.4.aar/2c0f71558fb15799a11edaadb9a971f2/AndroidManifest.xml:19:19-85
+uses-permission#com.google.android.c2dm.permission.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:22:5-81
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:22:22-79
+permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:24:17-71
+permission#com.ticatwolves.experto.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:24:5-109
+	android:protectionLevel
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:24:72-107
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:24:17-71
+uses-permission#${applicationId}.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:26:22-76
+uses-permission#com.ticatwolves.experto.permission.C2D_MESSAGE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:26:5-78
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:26:22-76
+receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:30:9-35:20
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:30:85-108
+	android:permission
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:30:109-169
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:30:19-84
+intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:31:13-34:29
+intent-filter#com.google.android.c2dm.intent.RECEIVE+com.ticatwolves.experto
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:31:13-34:29
+action#com.google.android.c2dm.intent.RECEIVE
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:32:17-80
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:32:25-78
+category#${applicationId}
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:33:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:33:27-58
+category#com.ticatwolves.experto
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:33:17-60
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:33:27-58
+receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:39:9-119
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:39:93-117
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:39:19-92
+service#com.google.firebase.iid.FirebaseInstanceIdService
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:43:9-47:19
+	android:exported
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:43:83-106
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:43:18-82
+intent-filter#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:44:13-46:29
+	android:priority
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:44:28-51
+action#com.google.firebase.INSTANCE_ID_EVENT
+ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:45:17-79
+	android:name
+		ADDED from [com.google.firebase:firebase-iid:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-iid-11.0.4.aar/eb142867e95f319191722e75e3c7802d/AndroidManifest.xml:45:25-77
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/058b615299184c6234e047eb49a17385/AndroidManifest.xml:6:9-194
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/058b615299184c6234e047eb49a17385/AndroidManifest.xml:6:19-78
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/058b615299184c6234e047eb49a17385/AndroidManifest.xml:6:144-168
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/058b615299184c6234e047eb49a17385/AndroidManifest.xml:6:169-192
+	android:name
+		ADDED from [com.google.firebase:firebase-common:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/firebase-common-11.0.4.aar/058b615299184c6234e047eb49a17385/AndroidManifest.xml:6:79-143
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/229b45779a1980d5039f07a6296c45fc/AndroidManifest.xml:20:9-121
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/229b45779a1980d5039f07a6296c45fc/AndroidManifest.xml:20:66-119
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:11.0.4] /home/ticat/.gradle/caches/transforms-1/files-1.1/play-services-basement-11.0.4.aar/229b45779a1980d5039f07a6296c45fc/AndroidManifest.xml:20:20-65

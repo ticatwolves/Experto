@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/fab_margin"
+    tools:context="com.ticatwolves.experto.expert.QuerySolutionActivity">
+
+    <TextView
+        android:id="@+id/by"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Problem By "/>
+
+    <TextView
+        android:layout_below="@+id/by"
+        android:id="@+id/statement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Problem Statement"/>
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/statement"
+        android:text="Description"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/replies"
+        android:layout_below="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </android.support.v7.widget.RecyclerView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/ans"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>

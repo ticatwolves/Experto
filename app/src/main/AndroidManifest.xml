@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.ticatwolves.experto">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.SplashScreen"
+            android:theme="@style/SplashScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.LoginActivity"
+            android:parentActivityName=".activity.ChooseModeActivity" />
+        <activity
+            android:name=".activity.RegistrationActivity"
+            android:parentActivityName=".activity.LoginActivity" />
+        <activity android:name=".admin.AdminHomeActivity" />
+        <activity
+            android:name=".activity.ChooseModeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".admin.AdminLoginActivity"
+            android:parentActivityName=".activity.ChooseModeActivity"
+            android:theme="@style/SplashScreenTheme" />
+        <activity
+            android:name=".guest.GuestActivity"
+            android:parentActivityName=".activity.ChooseModeActivity" />
+        <activity android:name=".expert.ExpertHomeActivity" />
+        <activity
+            android:name=".admin.AdminAddExpertActivity"
+            android:parentActivityName=".admin.AdminHomeActivity" />
+        <activity
+            android:name=".users.UserHomeActivity"
+            android:label="@string/title_activity_user_home"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".users.UserAskQueryActivity"
+            android:parentActivityName=".users.UserHomeActivity" />
+        <activity android:name=".guest.GuestQueryActivity" />
+        <activity android:name=".expert.QuerySolutionActivity"></activity>
+    </application>
+
+</manifest>

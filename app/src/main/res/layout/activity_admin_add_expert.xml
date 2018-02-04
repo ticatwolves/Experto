@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/fab_margin"
+    tools:context="com.ticatwolves.experto.admin.AdminAddExpertActivity">
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/expertid">
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:layout_height="wrap_content"
+            android:id="@+id/expertid_input"
+            android:hint="Enter Expert No" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_below="@+id/expertid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/expert_name">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:layout_height="wrap_content"
+            android:id="@+id/expert_name_input"
+            android:hint="Enter Expert Name" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_below="@+id/expert_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/expert_email">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:singleLine="true"
+            android:layout_height="wrap_content"
+            android:id="@+id/expert_email_input"
+            android:hint="Enter Expert Email ID" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_below="@+id/expert_email"
+        android:id="@+id/expert_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:id="@+id/expert_password_input"
+            android:hint="Enter Password" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Spinner
+        android:id="@+id/add_fields"
+        android:layout_below="@+id/expert_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:layout_margin="@dimen/fab_margin"/>
+
+    <Button
+        android:id="@+id/add_expert_btn"
+        android:layout_below="@+id/add_fields"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dip"
+        android:background="@color/colorAccent"
+        android:text="Add Expert"
+        android:textColor="@android:color/black" />
+
+</RelativeLayout>

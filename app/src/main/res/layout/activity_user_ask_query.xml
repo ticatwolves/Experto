@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/fab_margin"
+    tools:context="com.ticatwolves.experto.users.UserAskQueryActivity">
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/query">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/problem_statement_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:hint="Query Statement" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <LinearLayout
+        android:id="@+id/tags"
+        android:layout_below="@+id/query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Select Tag"/>
+        <Spinner
+            android:id="@+id/tags_spinner"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/experts"
+        android:layout_below="@+id/tags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Select Expert"/>
+        <Spinner
+            android:id="@+id/expert_spinner"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <android.support.v7.widget.AppCompatCheckBox
+            android:id="@+id/all"
+            android:layout_weight="1"
+            android:layout_width="match_parent"
+            android:text="Send To All"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/problem_describtion_input"
+        android:hint="Describe your problem here"
+        android:layout_marginTop="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/experts"
+        android:layout_above="@+id/problem_submit_btn"
+        android:gravity="top"
+        android:singleLine="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <Button
+        android:id="@+id/problem_submit_btn"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
+        android:text="Submit"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

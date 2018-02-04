@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/fab_margin"
+    android:background="@drawable/splash_screen_background"
+    tools:context="com.ticatwolves.experto.activity.ChooseModeActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="@dimen/name_size"/>
+    <ImageView
+        android:id="@+id/applogo"
+        android:layout_above="@+id/btn_admin"
+        android:layout_width="@dimen/logo_w_h"
+        android:layout_height="@dimen/logo_w_h"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp"
+        android:src="@drawable/expert" />
+
+    <Button
+        android:id="@+id/btn_admin"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_user"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorAccent"
+        android:text="@string/admin_btn"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_user"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorAccent"
+        android:text="@string/user_btn"
+        android:textColor="@android:color/black"
+        android:layout_above="@+id/btn_guest"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_guest"
+        android:layout_alignParentBottom="true"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/colorAccent"
+        android:text="@string/guest_btn"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+</RelativeLayout>
