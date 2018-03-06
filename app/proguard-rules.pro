@@ -19,3 +19,21 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+
+-dontwarn android.support.**
+
+
+-keep class org.webrtc.**  { *; }
+
+
+
+-keep class org.appspot.apprtc.**  { *; }
+
+
+
+-keep class de.tavendo.autobahn.**  { *; }
+
+
+
+-keepclasseswithmembernames class * { native <methods>; }

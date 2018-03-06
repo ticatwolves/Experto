@@ -16,7 +16,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.ticatwolves.experto.R;
 import com.ticatwolves.experto.admin.AdminAddExpertActivity;
 import com.ticatwolves.experto.admin.AdminHomeActivity;
@@ -106,8 +110,8 @@ public class AdminHomeFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         String f = field_input.getText().toString();
+                        f = f.substring(0, 1).toUpperCase() + f.substring(1);
                         FirebaseDatabase.getInstance().getReference("Tags").push().setValue(f);
-                        Toast.makeText(getContext(),"try later, some insternal error",Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
                     }
                 });
@@ -139,7 +143,9 @@ public class AdminHomeFragment extends Fragment {
                 confirmButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(addUser(rollno.getText().toString().trim())){
+
+                        if(validate(rollno.getText().toString().trim())){
+                            addUser(rollno.getText().toString().trim());
                             Toast.makeText(getContext(),"user added",Toast.LENGTH_SHORT).show();
                             dialog.dismiss();
                         }
@@ -160,10 +166,32 @@ public class AdminHomeFragment extends Fragment {
         });
     }
 
-    public Boolean addUser(String rollno){
+    public Boolean validate(String id) {
+        if (id.length() != 10 || !(id.matches("[0-9]+"))) {
+            Toast.makeText(getActivity(), "ID Should be of length 10 and numerical only", Toast.LENGTH_SHORT).show();
+            return Boolean.FALSE;
+        }
+        return true;
+    }
+
+    public Boolean addUser(final String rollno){
         try {
-            Log.e("adding user",rollno);
-            FirebaseDatabase.getInstance().getReference("Users").child(rollno).child("email").setValue(true);
+            FirebaseDatabase.getInstance().getReference("Users").child(rollno).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot snapshot) {
+                    if (snapshot.exists()) {
+                        Toast.makeText(getActivity(), "Already Registered", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Log.e("adding user",rollno);
+                        FirebaseDatabase.getInstance().getReference("Users").child(rollno).child("email").setValue("yes");
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                }
+            });
+
             return true;
         }
         catch (Exception e){
@@ -171,4 +199,5 @@ public class AdminHomeFragment extends Fragment {
             return false;
         }
     }
+
 }

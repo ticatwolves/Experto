@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "/home/ticat/Projects/Android-Projects/Android-studio-Projects/ExpertoProject/experto with video/Experto/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "/home/ticat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/78cc4f65972cf316dd54371c0ac5411e/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "source": "/home/ticat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/8aefe96fb63b92f7861635123a25998e/res/values-ldltr-v21/values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

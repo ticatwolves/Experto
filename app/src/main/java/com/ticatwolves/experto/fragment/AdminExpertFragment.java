@@ -1,7 +1,9 @@
 package com.ticatwolves.experto.fragment;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,12 +12,17 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -97,9 +104,6 @@ public class AdminExpertFragment extends Fragment {
         expert.setLayoutManager(new LinearLayoutManager(getActivity()));
         edatabase = FirebaseDatabase.getInstance().getReference("ExpertsRegistered");
 
-        final List<String> id = new ArrayList<>();
-        final List<String> email = new ArrayList<>();
-        final List<String> field = new ArrayList<>();
 
         pd.setMessage("please wait...");
         //pd.setCancelable(false);
@@ -155,19 +159,48 @@ public class AdminExpertFragment extends Fragment {
             holder.id.setText("Expert ID "+id.get(position));
             holder.email.setText("Email id "+d.getEmail());
             holder.name.setText("Name "+d.getName());
-            //holder.field.setText("Field" + d.getFields().toString());
-            holder.icon.setText((String)d.getName().toUpperCase().substring(0,1));
+            try{
+                Glide.with(ctx).load(d.getPhotourl()).into(holder.icon);
+            } catch (Exception e){
+            }
             holder.delete_expert.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //FirebaseDatabase.getInstance().getReference("Experts").child(field.get(position)).child(id.get(position)).removeValue();
-                    FirebaseDatabase.getInstance().getReference("ExpertsRegistered").child(id.get(position)).removeValue();
-                    Toast.makeText(ctx,"delete expert",Toast.LENGTH_SHORT).show();
-                    id.remove(position);
-                    data.remove(position);
-                    notifyItemRemoved(position);
-                    notifyItemRangeChanged(position,id.size());
+                    PopupMenu popupMenu=new PopupMenu(ctx,v);
+                    MenuInflater inflater= popupMenu.getMenuInflater();
+                    inflater.inflate(R.menu.admin_menu_option,popupMenu.getMenu());
+                    popupMenu.show();
 
+                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem item) {
+                            int i=item.getItemId();
+                            if (i==R.id.delete){
+                                new AlertDialog.Builder(getActivity())
+                                        .setTitle("Do you want to delete Expert")
+                                        .setPositiveButton("delete", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int whichButton) {
+                                                FirebaseDatabase.getInstance().getReference("ExpertsRegistered").child(id.get(position)).removeValue();
+                                                Toast.makeText(ctx,"delete expert",Toast.LENGTH_SHORT).show();
+                                                id.remove(position);
+                                                data.remove(position);
+                                                notifyItemRemoved(position);
+                                                notifyItemRangeChanged(position,id.size());
+
+                                                //startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", number, null)).putExtra("sms_body", msg));
+                                            }
+                                        })
+                                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int whichButton) {
+                                            }
+                                        })
+                                        .show();
+                                return true;
+                            }
+                            return false;
+                        }
+                    });
+                    //FirebaseDatabase.getInstance().getReference("Experts").child(field.get(position)).child(id.get(position)).removeValue();
                 }
             });
         }
@@ -178,16 +211,17 @@ public class AdminExpertFragment extends Fragment {
         }
 
         public class MyOwnHolder extends RecyclerView.ViewHolder {
-            TextView id,email,field,icon,name;
-            Button delete_expert;
+            TextView id,email,field,name;
+            ImageView delete_expert;
+            ImageView icon;
             public MyOwnHolder(View itemView) {
                 super(itemView);
                 id = (TextView) itemView.findViewById(R.id.expert_id_show);
-                icon = (TextView) itemView.findViewById(R.id.pimage);
+                icon = (ImageView) itemView.findViewById(R.id.pimage);
                 email = (TextView) itemView.findViewById(R.id.expert_email_show);
                 field = (TextView) itemView.findViewById(R.id.expert_field);
                 name = (TextView) itemView.findViewById(R.id.expert_name_show);
-                delete_expert = (Button) itemView.findViewById(R.id.delete_expert);
+                delete_expert = (ImageView) itemView.findViewById(R.id.delete_expert);
             }
         }
     }

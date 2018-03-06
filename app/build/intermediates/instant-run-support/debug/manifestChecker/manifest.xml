@@ -14,7 +14,21 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
 
@@ -27,14 +41,15 @@
     <application
         android:allowBackup="true"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/expert"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/expert"
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.ticatwolves.experto.activity.SplashScreen"
+            android:screenOrientation="portrait"
             android:theme="@style/SplashScreenTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,35 +58,123 @@
             </intent-filter>
         </activity>
         <activity
+            android:name="org.appspot.apprtc.ConnectActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan" >
+
+            <!--
+            intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter
+            -->
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="appr.tc"
+                    android:scheme="https" />
+                <data
+                    android:host="appr.tc"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.appspot.apprtc.SettingsActivity"
+            android:label="@string/settings_name" >
+        </activity>
+        <activity
+            android:name="org.appspot.apprtc.CallActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name"
+            android:screenOrientation="fullUser"
+            android:theme="@style/CallActivityTheme" >
+        </activity>
+        <activity
             android:name="com.ticatwolves.experto.activity.LoginActivity"
-            android:parentActivityName="com.ticatwolves.experto.activity.ChooseModeActivity" />
+            android:parentActivityName="com.ticatwolves.experto.activity.ChooseModeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.ticatwolves.experto.activity.RegistrationActivity"
-            android:parentActivityName="com.ticatwolves.experto.activity.LoginActivity" />
+            android:parentActivityName="com.ticatwolves.experto.activity.LoginActivity"
+            android:screenOrientation="portrait" />
         <activity android:name="com.ticatwolves.experto.admin.AdminHomeActivity" />
         <activity
             android:name="com.ticatwolves.experto.activity.ChooseModeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name="com.ticatwolves.experto.admin.AdminLoginActivity"
             android:parentActivityName="com.ticatwolves.experto.activity.ChooseModeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/SplashScreenTheme" />
         <activity
             android:name="com.ticatwolves.experto.guest.GuestActivity"
-            android:parentActivityName="com.ticatwolves.experto.activity.ChooseModeActivity" />
+            android:parentActivityName="com.ticatwolves.experto.activity.ChooseModeActivity"
+            android:screenOrientation="portrait" />
         <activity android:name="com.ticatwolves.experto.expert.ExpertHomeActivity" />
         <activity
             android:name="com.ticatwolves.experto.admin.AdminAddExpertActivity"
-            android:parentActivityName="com.ticatwolves.experto.admin.AdminHomeActivity" />
+            android:parentActivityName="com.ticatwolves.experto.admin.AdminHomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.ticatwolves.experto.users.UserHomeActivity"
             android:label="@string/title_activity_user_home"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name="com.ticatwolves.experto.users.UserAskQueryActivity"
-            android:parentActivityName="com.ticatwolves.experto.users.UserHomeActivity" />
-        <activity android:name="com.ticatwolves.experto.guest.GuestQueryActivity" />
-        <activity android:name="com.ticatwolves.experto.expert.QuerySolutionActivity" />
+            android:parentActivityName="com.ticatwolves.experto.users.UserHomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.ticatwolves.experto.guest.GuestQueryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.ticatwolves.experto.expert.QuerySolutionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.ticatwolves.experto.users.UserChatActivity"
+            android:parentActivityName="com.ticatwolves.experto.users.UserHomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.ticatwolves.experto.expert.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.ticatwolves.experto.users.SettingsActivity" />
+
+        <!-- Firebase Notifications -->
+        <service android:name="com.ticatwolves.experto.service.MyFirebaseMessagingService" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="com.ticatwolves.experto.service.MyFirebaseInstanceIDService" >
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <!-- ./Firebase Notifications -->
+
+        <activity android:name="com.ticatwolves.experto.activity.AnouncementActivity" />
+        <activity android:name="com.ticatwolves.experto.activity.VideoActivity" />
+
+        <meta-data
+            android:name="android.support.VERSION"
+            android:value="26.1.0" />
+        <!--
+ FirebaseMessagingService performs security checks at runtime,
+             no need for explicit permissions despite exported="true"
+        -->
+        <service
+            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+            android:exported="true" >
+            <intent-filter android:priority="-500" >
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
 
         <receiver
             android:name="com.google.android.gms.measurement.AppMeasurementReceiver"

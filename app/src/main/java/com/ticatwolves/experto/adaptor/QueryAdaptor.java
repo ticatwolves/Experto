@@ -3,18 +3,22 @@ package com.ticatwolves.experto.adaptor;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.ticatwolves.experto.R;
 import com.ticatwolves.experto.dataobjects.AddProblem;
 import com.ticatwolves.experto.expert.QuerySolutionActivity;
 import com.ticatwolves.experto.guest.GuestActivity;
 import com.ticatwolves.experto.guest.GuestQueryActivity;
+import com.ticatwolves.experto.users.UserHomeActivity;
 
 import java.util.List;
 
@@ -51,13 +55,19 @@ public class QueryAdaptor extends RecyclerView.Adapter<QueryAdaptor.MyOwnHolder>
         holder.tag.setText("Tag "+p.getTag());
         holder.problemStatement.setText("Statement "+p.getStatement());
         holder.totalReplies.setText("TotalReplies "+repliesCount.get(position));
+        try {
+            Glide.with(ctx).load(p.getPhoto()).into(holder.photo);
+        }catch (Exception e){
+            Log.e("errorheehehe",position+"here");
+        }
         holder.re.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ctx.startActivity(new Intent(ctx,QuerySolutionActivity.class).putExtra("by",p.getBy()).putExtra("statement",p.getStatement()).putExtra("description",p.getDescribtion()).putExtra("url",url.get(position)));
-                Toast.makeText(ctx,"I\'ll handle rest",Toast.LENGTH_SHORT).show();
+                ctx.startActivity(new Intent(ctx,QuerySolutionActivity.class).putExtra("by",p.getBy()).putExtra("statement",p.getStatement()).putExtra("description",p.getDescribtion()).putExtra("url",url.get(position)).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
             }
         });
+
+
     }
 
     @Override
@@ -68,6 +78,7 @@ public class QueryAdaptor extends RecyclerView.Adapter<QueryAdaptor.MyOwnHolder>
     public class MyOwnHolder extends RecyclerView.ViewHolder {
         public RelativeLayout re;
         public TextView askedBy,problemStatement,tag,totalReplies,postedOn;
+        public ImageView photo;
         public MyOwnHolder(View itemView) {
             super(itemView);
             re = (RelativeLayout)itemView.findViewById(R.id.re);
@@ -76,6 +87,7 @@ public class QueryAdaptor extends RecyclerView.Adapter<QueryAdaptor.MyOwnHolder>
             tag = (TextView) itemView.findViewById(R.id.tag);
             totalReplies = (TextView)itemView.findViewById(R.id.total_replies);
             postedOn = (TextView)itemView.findViewById(R.id.posted_on);
+            photo = (ImageView) itemView.findViewById(R.id.pimage);
         }
     }
 }

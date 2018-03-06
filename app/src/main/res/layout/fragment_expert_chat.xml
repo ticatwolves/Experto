@@ -4,9 +4,11 @@
     android:layout_height="match_parent"
     tools:context="com.ticatwolves.experto.fragment.ExpertChatFragment">
 
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recy"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Chats gonna come here" />
+        android:layout_height="match_parent">
+
+    </android.support.v7.widget.RecyclerView>
 
 </FrameLayout>

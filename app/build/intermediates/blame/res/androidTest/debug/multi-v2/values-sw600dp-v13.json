@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "/home/ticat/Projects/Android-Projects/Android-studio-Projects/ExpertoProject/experto with video/Experto/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "/home/ticat/.gradle/caches/transforms-1/files-1.1/design-27.0.2.aar/84de2b73c56e6c4f43627706dde4ebe8/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "/home/ticat/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/226ed9b11893a4aed0ea0582e6374ec7/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "/home/ticat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/78cc4f65972cf316dd54371c0ac5411e/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "/home/ticat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/8aefe96fb63b92f7861635123a25998e/res/values-sw600dp-v13/values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

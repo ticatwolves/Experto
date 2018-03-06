@@ -30,7 +30,7 @@ import java.util.HashMap;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private EditText inputEmail, inputPassword;
+    private EditText inputId, inputPassword;
     private FirebaseAuth auth;
     private ProgressBar progressBar;
     private Button btnSignup, btnLogin;//, btnReset;
@@ -55,11 +55,11 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
             else if (type.equals("expert")){
-                startActivity(new Intent(LoginActivity.this, ExpertHomeActivity.class));
+                startActivity(new Intent(LoginActivity.this, ExpertHomeActivity.class).putExtra("id",user.get(SessionManager.KEY_UID)));
                 finish();
             }
             else {
-                startActivity(new Intent(LoginActivity.this, UserHomeActivity.class));
+                startActivity(new Intent(LoginActivity.this, UserHomeActivity.class).putExtra("id",user.get(SessionManager.KEY_UID)));
                 finish();
             }
         }
@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
-        inputEmail = (EditText) findViewById(R.id.email);
+        inputId = (EditText) findViewById(R.id.id);
         inputPassword = (EditText) findViewById(R.id.password);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         btnSignup = (Button) findViewById(R.id.btn_signup);
@@ -94,31 +94,30 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String email = inputEmail.getText().toString();
+                final String id = inputId.getText().toString();
                 final String password = inputPassword.getText().toString();
 
-                if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                if (id.length() != 10 || !(id.matches("[0-9]+"))) {
+                    Toast.makeText(getApplicationContext(), "ID Should be of length 10 and numerical only", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                if (TextUtils.isEmpty(password) || password.length() < 6) {
+                    Toast.makeText(getApplicationContext(), "Enter password! greater then length 6", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 progressBar.setVisibility(View.VISIBLE);
 
-                DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Users").child(email).child("email");
+                DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Users").child(id).child("email");
                 rootRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot snapshot) {
                         if (snapshot.exists()) {
-                            login(snapshot.getValue().toString(),password,email);
-                            Toast.makeText(getApplicationContext(),"Can reg",Toast.LENGTH_SHORT).show();
+                            login(snapshot.getValue().toString(),password,id);
                         }
                         else {
-                            Toast.makeText(getApplicationContext(),"Sorry",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Sorry you Can't Register",Toast.LENGTH_SHORT).show();
                         }
                     }
 
@@ -147,7 +146,6 @@ public class LoginActivity extends AppCompatActivity {
                                 Toast.makeText(LoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                             }
                         } else {
-                            startActivity(new Intent(LoginActivity.this, UserHomeActivity.class));
                             FirebaseDatabase.getInstance().getReference("Users").child(id).child("name").addListenerForSingleValueEvent(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(DataSnapshot snapshot) {
@@ -172,5 +170,6 @@ public class LoginActivity extends AppCompatActivity {
 
     public void createSession(String name, String email, String userid, String type){
         session.createLoginSession(name, email, userid,type);
+        startActivity(new Intent(LoginActivity.this, UserHomeActivity.class));
     }
 }

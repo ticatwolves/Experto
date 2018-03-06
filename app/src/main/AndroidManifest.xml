@@ -9,15 +9,33 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
 
+
+
+
+    <uses-feature android:name="android.hardware.camera"/>
+    <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/expert"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/expert"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".activity.SplashScreen"
+            android:screenOrientation="portrait"
             android:theme="@style/SplashScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,36 +43,112 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name="org.appspot.apprtc.ConnectActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan">
+            <!--intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter-->
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+
+                <data
+                    android:scheme="https"
+                    android:host="appr.tc"
+                    />
+                <data
+                    android:scheme="http"
+                    android:host="appr.tc"
+                    />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="org.appspot.apprtc.SettingsActivity"
+            android:label="@string/settings_name">
+        </activity>
+
+        <activity
+            android:name="org.appspot.apprtc.CallActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="fullUser"
+            android:configChanges="orientation|screenSize"
+            android:theme="@style/CallActivityTheme">
+        </activity>
+
         <activity
             android:name=".activity.LoginActivity"
-            android:parentActivityName=".activity.ChooseModeActivity" />
+            android:parentActivityName=".activity.ChooseModeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".activity.RegistrationActivity"
-            android:parentActivityName=".activity.LoginActivity" />
+            android:parentActivityName=".activity.LoginActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".admin.AdminHomeActivity" />
         <activity
             android:name=".activity.ChooseModeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".admin.AdminLoginActivity"
             android:parentActivityName=".activity.ChooseModeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/SplashScreenTheme" />
         <activity
             android:name=".guest.GuestActivity"
-            android:parentActivityName=".activity.ChooseModeActivity" />
+            android:parentActivityName=".activity.ChooseModeActivity"
+            android:screenOrientation="portrait" />
         <activity android:name=".expert.ExpertHomeActivity" />
         <activity
             android:name=".admin.AdminAddExpertActivity"
-            android:parentActivityName=".admin.AdminHomeActivity" />
+            android:parentActivityName=".admin.AdminHomeActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".users.UserHomeActivity"
             android:label="@string/title_activity_user_home"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".users.UserAskQueryActivity"
-            android:parentActivityName=".users.UserHomeActivity" />
-        <activity android:name=".guest.GuestQueryActivity" />
-        <activity android:name=".expert.QuerySolutionActivity"></activity>
+            android:parentActivityName=".users.UserHomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".guest.GuestQueryActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".expert.QuerySolutionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".users.UserChatActivity"
+            android:parentActivityName=".users.UserHomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".expert.ChatActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".users.SettingsActivity" />
+
+        <!-- Firebase Notifications -->
+        <service android:name=".service.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".service.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <!-- ./Firebase Notifications -->
+
+        <activity android:name=".activity.AnouncementActivity" />
+        <activity android:name=".activity.VideoActivity"></activity>
     </application>
 
 </manifest>

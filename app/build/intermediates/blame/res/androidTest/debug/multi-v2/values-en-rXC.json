@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-en-rXC/values-en-rXC.xml",
+            "outputFile": "/home/ticat/Projects/Android-Projects/Android-studio-Projects/ExpertoProject/experto with video/Experto/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-en-rXC/values-en-rXC.xml",
             "map": [
                 {
-                    "source": "/home/ticat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/78cc4f65972cf316dd54371c0ac5411e/res/values-en-rXC/values-en-rXC.xml",
+                    "source": "/home/ticat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.0.aar/5077dc8c22d3aaeca72740844818e818/res/values-en-rXC/values-en-rXC.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

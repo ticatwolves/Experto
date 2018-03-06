@@ -1,7 +1,9 @@
 package com.ticatwolves.experto.users;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,10 +21,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -30,6 +34,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ticatwolves.experto.R;
+import com.ticatwolves.experto.activity.AnouncementActivity;
+import com.ticatwolves.experto.adaptor.QueryAdaptor;
 import com.ticatwolves.experto.dataobjects.AddProblem;
 import com.ticatwolves.experto.expert.QuerySolutionActivity;
 import com.ticatwolves.experto.guest.GuestActivity;
@@ -48,7 +54,9 @@ public class UserHomeActivity extends AppCompatActivity
     final List<AddProblem> data = new ArrayList<>();
     final List<String> replies = new ArrayList<>();
     final List<String> url = new ArrayList<>();
-    QueriesAdaptor queriesAdaptor;
+    QueryAdaptor queriesAdaptor;
+    String id;
+    ImageView photo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,12 +86,38 @@ public class UserHomeActivity extends AppCompatActivity
 
         email = (TextView) navview.findViewById(R.id.email);
         name = (TextView) navview.findViewById(R.id.name);
+        photo = (ImageView) navview.findViewById(R.id.image);
+
         email.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail().toString());
+
         SessionManager sessionManager = new SessionManager(this);
         HashMap<String, String> user = sessionManager.getUserDetails();
         String na = user.get(SessionManager.KEY_NAME);
-
+        id = user.get(SessionManager.KEY_UID);
+        //Toast.makeText(this,id,Toast.LENGTH_SHORT).show();
         name.setText(na);
+        try {
+            FirebaseDatabase.getInstance().getReference().child("Users").child(id).child("photourl").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    //Toast.makeText(UserHomeActivity.this,dataSnapshot.getValue().toString(),Toast.LENGTH_SHORT).show();
+                    Glide.with(UserHomeActivity.this).load(dataSnapshot.getValue().toString()).into(photo);
+                    SharedPreferences sh = getSharedPreferences("experto", MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sh.edit();
+                    editor.putString("photo", dataSnapshot.getValue().toString());
+                    editor.commit();
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }catch (Exception e){
+
+        }
+        //email.setText(user.get(SessionManager.KEY_EMAIL));
 
         navigationView.setNavigationItemSelectedListener(this);
 
@@ -102,22 +136,21 @@ public class UserHomeActivity extends AppCompatActivity
                 url.clear();
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     for (DataSnapshot d : postSnapshot.getChildren()){
-                        Log.e("data",d.toString());
+                        //Log.e("data",d.toString());
                         AddProblem problems = d.getValue(AddProblem.class);
                         url.add(id+" "+postSnapshot.getKey()+" "+d.getKey()+"");
-
                         try{
-                            Log.e("Total Replies = ",""+d.child("replies").getChildrenCount());
+                            //Log.e("Total Replies = ",""+d.child("replies").getChildrenCount());
                             replies.add(""+d.child("replies").getChildrenCount());
                         }
                         catch (Exception e){
-                            Log.e("Total Replies = ","0");
+                            //Log.e("Total Replies = ","0");
                             replies.add("0");
                         }
                         data.add(problems);
                     }
                 }
-                queriesAdaptor = new QueriesAdaptor(getApplicationContext(),data,replies,url);
+                queriesAdaptor = new QueryAdaptor(getApplicationContext(),data,replies,url);
                 queries_view.setAdapter(queriesAdaptor);
             }
             @Override
@@ -128,13 +161,20 @@ public class UserHomeActivity extends AppCompatActivity
 
     }
 
+    @SuppressLint("WrongConstant")
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent intent;
+            intent = new Intent("android.intent.action.MAIN");
+            intent.setFlags(268435456);
+            intent.addCategory("android.intent.category.HOME");
+            startActivity(intent);
+
+            //super.onBackPressed();
         }
     }
 
@@ -154,6 +194,7 @@ public class UserHomeActivity extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(UserHomeActivity.this,SettingsActivity.class));
             return true;
         }
 
@@ -168,14 +209,21 @@ public class UserHomeActivity extends AppCompatActivity
 
         if (id == R.id.nav_dashboard) {
             // Handle the camera action
-        } else if (id == R.id.nav_profile) {
-
+        } else if (id == R.id.nav_announcement) {
+            startActivity(new Intent(UserHomeActivity.this,AnouncementActivity.class));
+        } else if (id == R.id.nav_chats) {
+            startActivity(new Intent(UserHomeActivity.this,UserChatActivity.class));
         } else if (id == R.id.nav_setting) {
-
+            startActivity(new Intent(UserHomeActivity.this,SettingsActivity.class));
         } else if (id == R.id.logout) {
             FirebaseAuth.getInstance().signOut();
             SessionManager sessionManager = new SessionManager(this);
             sessionManager.logoutUser();
+            SharedPreferences sh = getSharedPreferences("experto", MODE_PRIVATE);
+            SharedPreferences.Editor editor = sh.edit();
+            editor.putString("photo", "");
+            editor.commit();
+
             finish();
         }
         else if (id == R.id.nav_about) {
@@ -189,7 +237,7 @@ public class UserHomeActivity extends AppCompatActivity
         return true;
     }
 
-    class QueriesAdaptor extends RecyclerView.Adapter<QueriesAdaptor.MyOwnHolder> {
+    /*class QueriesAdaptor extends RecyclerView.Adapter<QueriesAdaptor.MyOwnHolder> {
 
         Context ctx;
         List<AddProblem> data;
@@ -218,11 +266,11 @@ public class UserHomeActivity extends AppCompatActivity
             holder.tag.setText("Tag "+p.getTag());
             holder.problemStatement.setText("Statement "+p.getStatement());
             holder.totalReplies.setText("TotalReplies "+repliesCount.get(position));
+            Glide.with(ctx).load(p.getPhoto()).into(holder.photo);
             holder.re.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     ctx.startActivity(new Intent(ctx,QuerySolutionActivity.class).putExtra("by",p.getBy()).putExtra("statement",p.getStatement()).putExtra("description",p.getDescribtion()).putExtra("url",u.get(position)).setFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
-                    Toast.makeText(ctx,"I\'ll handle rest", Toast.LENGTH_SHORT).show();
                 }
             });
         }
@@ -235,6 +283,7 @@ public class UserHomeActivity extends AppCompatActivity
         public class MyOwnHolder extends RecyclerView.ViewHolder {
             public RelativeLayout re;
             public TextView askedBy,problemStatement,tag,totalReplies,postedOn;
+            ImageView photo;
             public MyOwnHolder(View itemView) {
                 super(itemView);
                 re = (RelativeLayout)itemView.findViewById(R.id.re);
@@ -243,7 +292,8 @@ public class UserHomeActivity extends AppCompatActivity
                 tag = (TextView) itemView.findViewById(R.id.tag);
                 totalReplies = (TextView)itemView.findViewById(R.id.total_replies);
                 postedOn = (TextView)itemView.findViewById(R.id.posted_on);
+                photo = (ImageView) itemView.findViewById(R.id.pimage);
             }
         }
-    }
+    }*/
 }

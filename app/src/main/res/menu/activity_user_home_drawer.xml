@@ -2,23 +2,26 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_dashboard"
-            android:icon="@android:drawable/arrow_down_float"
+            android:icon="@mipmap/ic_home"
             android:title="Dashboard" />
         <item
-            android:id="@+id/nav_profile"
-            android:icon="@android:drawable/alert_light_frame"
-            android:title="Profile" />
+            android:id="@+id/nav_chats"
+            android:icon="@mipmap/ic_chat"
+            android:title="Chats"/>
+        <item
+            android:id="@+id/nav_announcement"
+            android:icon="@mipmap/ic_profile"
+            android:title="Announcement" />
         <item
             android:id="@+id/nav_setting"
-            android:icon="@android:drawable/arrow_up_float"
+            android:icon="@mipmap/ic_settings"
             android:title="Setting" />
         <item
             android:id="@+id/logout"
-            android:icon="@android:drawable/bottom_bar"
+            android:icon="@mipmap/ic_logout"
             android:title="@string/logout"/>
     </group>
 
@@ -26,11 +29,11 @@
         <menu>
             <item
                 android:id="@+id/nav_about"
-                android:icon="@android:drawable/status_bar_item_app_background"
+                android:icon="@mipmap/ic_about"
                 android:title="About" />
             <item
                 android:id="@+id/nav_admin"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@mipmap/ic_help"
                 android:title="Ask Admin" />
         </menu>
     </item>

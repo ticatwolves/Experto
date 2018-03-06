@@ -1,6 +1,8 @@
 package com.ticatwolves.experto.expert;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,10 +13,16 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.ticatwolves.experto.R;
+import com.ticatwolves.experto.activity.AnouncementActivity;
 import com.ticatwolves.experto.activity.ChooseModeActivity;
 import com.ticatwolves.experto.admin.AdminHomeActivity;
 import com.ticatwolves.experto.fragment.AdminExpertFragment;
@@ -24,6 +32,8 @@ import com.ticatwolves.experto.fragment.ExpertChatFragment;
 import com.ticatwolves.experto.fragment.ExpertForAllFragment;
 import com.ticatwolves.experto.fragment.ExpertForMeFragment;
 import com.ticatwolves.experto.session.SessionManager;
+import com.ticatwolves.experto.users.SettingsActivity;
+import com.ticatwolves.experto.users.UserHomeActivity;
 
 public class ExpertHomeActivity extends AppCompatActivity {
 
@@ -59,6 +69,45 @@ public class ExpertHomeActivity extends AppCompatActivity {
             }
         });
 
+        Toast.makeText(this,getIntent().getStringExtra("id"),Toast.LENGTH_LONG).show();
+
+        try {
+            FirebaseDatabase.getInstance().getReference().child("ExpertsRegistered").child(getIntent().getStringExtra("id")).child("photourl").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()){
+                        SharedPreferences sh = getSharedPreferences("experto", MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sh.edit();
+                        editor.putString("photo", dataSnapshot.getValue().toString());
+                        editor.commit();
+                       // Toast.makeText(ExpertHomeActivity.this,dataSnapshot.getValue().toString(),Toast.LENGTH_SHORT).show();
+                    }
+
+                    //Glide.with(ExpertHomeActivity.this).load(dataSnapshot.getValue().toString()).into(photo);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+        }catch (Exception e){
+            //Toast.makeText(this,e.toString(),Toast.LENGTH_SHORT).show();
+        }
+
+
+    }
+
+    @SuppressLint("WrongConstant")
+    @Override
+    public void onBackPressed() {
+        Intent intent;
+        intent = new Intent("android.intent.action.MAIN");
+        intent.setFlags(268435456);
+        intent.addCategory("android.intent.category.HOME");
+        startActivity(intent);
+
+        //super.onBackPressed();
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -73,12 +122,23 @@ public class ExpertHomeActivity extends AppCompatActivity {
                 auth.signOut();
                 SessionManager sessionManager = new SessionManager(this);
                 sessionManager.logoutUser();
+                SharedPreferences sh = getSharedPreferences("experto", MODE_PRIVATE);
+                SharedPreferences.Editor editor = sh.edit();
+                editor.putString("photo", "");
+                editor.commit();
                 startActivity(new Intent(this, ChooseModeActivity.class));
                 finish();
-                return true;
+                break;
+            case R.id.setting:
+                startActivity(new Intent(this, SettingsActivity.class));
+                break;
+            case R.id.ann:
+                startActivity(new Intent(this, AnouncementActivity.class));
+                break;
             default:
                 return super.onOptionsItemSelected(item);
         }
+        return true;
     }
 
 

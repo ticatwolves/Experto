@@ -1,5 +1,6 @@
 package com.ticatwolves.experto.admin;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -55,6 +56,18 @@ public class AdminHomeActivity extends AppCompatActivity {
             public void onTabReselected(TabLayout.Tab tab) {
             }
         });
+    }
+
+    @SuppressLint("WrongConstant")
+    @Override
+    public void onBackPressed() {
+        Intent intent;
+        intent = new Intent("android.intent.action.MAIN");
+        intent.setFlags(268435456);
+        intent.addCategory("android.intent.category.HOME");
+        startActivity(intent);
+
+        //super.onBackPressed();
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

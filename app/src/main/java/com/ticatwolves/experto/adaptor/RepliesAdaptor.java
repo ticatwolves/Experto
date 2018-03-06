@@ -6,10 +6,12 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.ticatwolves.experto.R;
 import com.ticatwolves.experto.dataobjects.AddProblem;
 import com.ticatwolves.experto.dataobjects.AddReplies;
@@ -44,7 +46,11 @@ public class RepliesAdaptor extends RecyclerView.Adapter<RepliesAdaptor.MyOwnHol
         holder.rep.setText(p.getReply());
         holder.by.setText(p.getBy());
         holder.on.setText(p.getOn());
-        holder.pimage.setText(p.getBy().toUpperCase().substring(0,1));
+        try {
+            Glide.with(ctx).load(p.getPhoto()).into(holder.photo);
+        }catch (Exception e){
+
+        }
     }
 
     @Override
@@ -53,13 +59,14 @@ public class RepliesAdaptor extends RecyclerView.Adapter<RepliesAdaptor.MyOwnHol
     }
 
     public class MyOwnHolder extends RecyclerView.ViewHolder {
-        public TextView pimage,rep,on,by;
+        public TextView rep,on,by;
+        public ImageView photo;
         public MyOwnHolder(View itemView) {
             super(itemView);
-            pimage = (TextView) itemView.findViewById(R.id.pimage);
             rep = (TextView) itemView.findViewById(R.id.rep);
             on = (TextView) itemView.findViewById(R.id.time);
             by = (TextView) itemView.findViewById(R.id.by);
+            photo = (ImageView) itemView.findViewById(R.id.pimage);
         }
     }
 }

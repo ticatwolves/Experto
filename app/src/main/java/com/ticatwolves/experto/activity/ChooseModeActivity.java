@@ -42,16 +42,14 @@ public class ChooseModeActivity extends AppCompatActivity implements View.OnClic
                 finish();
             }
             else if (type.equals("expert")){
-                startActivity(new Intent(ChooseModeActivity.this, ExpertHomeActivity.class));
+                startActivity(new Intent(ChooseModeActivity.this, ExpertHomeActivity.class).putExtra("id",user.get(SessionManager.KEY_UID)));
                 finish();
             }
             else {
-                startActivity(new Intent(ChooseModeActivity.this, UserHomeActivity.class));
+                startActivity(new Intent(ChooseModeActivity.this, UserHomeActivity.class).putExtra("id",user.get(SessionManager.KEY_UID)));
                 finish();
             }
         }
-
-
 
         btn_admin = (Button) findViewById(R.id.btn_admin);
         btn_user = (Button) findViewById(R.id.btn_user);

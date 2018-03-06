@@ -1,12 +1,15 @@
 package com.ticatwolves.experto.expert;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -71,12 +74,16 @@ public class QuerySolutionActivity extends AppCompatActivity {
         statement.setText("Statement :- "+sstatement);
         description.setText("Description :- "+ddescription);
 
+        setTitle(sstatement);
 
         String str = i.getExtras().getString("url");
         final String[] path = str.split("\\s+");
         SessionManager sessionManager = new SessionManager(this);
         HashMap<String, String> user = sessionManager.getUserDetails();
         final String name = user.get(SessionManager.KEY_NAME);
+
+        @SuppressLint("WrongConstant") SharedPreferences sh1 = getSharedPreferences("experto",MODE_APPEND);
+        final String photo = sh1.getString("photo","");
 
         FirebaseDatabase.getInstance().getReference("Queries").child(path[0]).child(path[1]).child(path[2]).child("replies").addValueEventListener(new ValueEventListener() {
             @Override
@@ -120,7 +127,12 @@ public class QuerySolutionActivity extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         String f = field_input.getText().toString();
-                        AddReplies addReplies = new AddReplies(f,name);
+                        if (TextUtils.isEmpty(f)) {
+                            Toast.makeText(getApplicationContext(), "Enter id!!!", Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+                        Toast.makeText(QuerySolutionActivity.this,photo,Toast.LENGTH_SHORT).show();
+                        AddReplies addReplies = new AddReplies(f,name,photo);
                         FirebaseDatabase.getInstance().getReference("Queries").child(path[0]).child(path[1]).child(path[2]).child("replies").push().setValue(addReplies);
 //                        Toast.makeText(getApplicationContext(),"try later, some insternal error",Toast.LENGTH_SHORT).show();
                         dialog.dismiss();
@@ -132,9 +144,13 @@ public class QuerySolutionActivity extends AppCompatActivity {
 
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        if(type.equals("expert")) {
-            MenuInflater inflater = getMenuInflater();
-            inflater.inflate(R.menu.expert_query_menu, menu);
+        try {
+            if (type.equals("expert")) {
+                //MenuInflater inflater = getMenuInflater();
+                //inflater.inflate(R.menu.expert_query_menu, menu);
+            }
+        }catch (Exception e){
+            ans.setVisibility(View.GONE);
         }
         return true;
     }
@@ -142,10 +158,15 @@ public class QuerySolutionActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.refer:
-                Toast.makeText(this,"Ill share it",Toast.LENGTH_SHORT).show();
+                //pass();
+                //Toast.makeText(this,"Ill share it",Toast.LENGTH_SHORT).show();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void pass(){
+
     }
 }

@@ -12,15 +12,15 @@ import java.util.Date;
  */
 
 public class AddProblem {
-    String statement,describtion,time,by,tag;
-    //DataSnapshot replies;
+    String statement,describtion,time,by,tag,photo;
 
-    public AddProblem(String statement,String describtion,String tag,String name){
+    public AddProblem(String statement,String describtion,String tag,String name,String photo){
         this.statement = statement;
         this.describtion = describtion;
         this.time = new SimpleDateFormat("dd.MM.yyyy").format(new Date());
         this.tag = tag;
         this.by = name;
+        this.photo = photo;
     }
 
     public AddProblem(){}
@@ -30,5 +30,6 @@ public class AddProblem {
     public String getTag(){return tag;}
     public String getTime(){return time;}
     public String getBy(){return by;}
+    public String getPhoto(){return photo;}
     //public DataSnapshot getReplies(){return replies;}
 }

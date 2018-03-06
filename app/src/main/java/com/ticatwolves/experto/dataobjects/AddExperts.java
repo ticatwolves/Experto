@@ -7,8 +7,9 @@ import com.google.firebase.database.DataSnapshot;
  */
 
 public class AddExperts {
-    public String name,email;
+    public String name,email,photourl;
     public DataSnapshot fields;
+
     public AddExperts(String name,String email){
         this.name = name;
         this.email = email;
@@ -25,4 +26,6 @@ public class AddExperts {
     public String getName(){return name;}
     public String getEmail(){return email;}
     public DataSnapshot getFields(){return fields;}
+    public String getPhotourl(){return photourl;}
+
 }

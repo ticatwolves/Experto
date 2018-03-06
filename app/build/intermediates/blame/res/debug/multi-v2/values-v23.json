@@ -1,10 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "/home/ticat/Projects/Android-Projects/Android-studio-Projects/Experto Project/Experto/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
+            "outputFile": "/home/ticat/Projects/Android-Projects/Android-studio-Projects/ExpertoProject/experto with video/Experto/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/home/ticat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/78cc4f65972cf316dd54371c0ac5411e/res/values-v23/values-v23.xml",
+                    "source": "/home/ticat/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/ee1079aa20b3c589797e00e619e41a9e/res/values-v23/values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "2646",
+                        "endLines": "39",
+                        "endColumns": "12",
+                        "endOffsets": "2791"
+                    }
+                },
+                {
+                    "source": "/home/ticat/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/8aefe96fb63b92f7861635123a25998e/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

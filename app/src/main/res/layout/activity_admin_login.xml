@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Admin Portal"
+            android:text="Expert Portal"
             android:gravity="center"
             android:textStyle="normal"
             android:paddingBottom="@dimen/fab_margin"
@@ -35,10 +35,10 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/email_admin"
+                android:id="@+id/id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/email_hint"
+                android:hint="@string/hint_id"
                 android:inputType="textEmailAddress"
                 android:maxLines="1"
                 android:singleLine="true"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content">
 
             <EditText
-                android:id="@+id/password_admin"
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:focusableInTouchMode="true"

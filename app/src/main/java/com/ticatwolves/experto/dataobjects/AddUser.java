@@ -7,14 +7,15 @@ import com.google.firebase.database.DataSnapshot;
  */
 
 public class AddUser {
-    public String name,email,fname,gender,phone,dob;
-    public AddUser(String name,String fname,String email,String gender,String phone,String dob){
+    public String name,email,fname,gender,phone,dob,photourl;
+    public AddUser(String name,String fname,String email,String gender,String phone,String dob,String photo){
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.fname = fname;
         this.gender = gender;
         this.dob = dob;
+        this.photourl = photo;
     }
 
     public AddUser(){}
@@ -25,4 +26,5 @@ public class AddUser {
     public String getGender(){return gender;}
     public String getPhone(){return phone;}
     public String getDob(){return dob;}
+    public String getPhotourl(){return photourl;}
 }

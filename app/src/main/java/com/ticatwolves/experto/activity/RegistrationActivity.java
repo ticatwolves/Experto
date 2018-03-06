@@ -34,6 +34,7 @@ import com.ticatwolves.experto.admin.AdminHomeActivity;
 import com.ticatwolves.experto.dataobjects.AddExperts;
 import com.ticatwolves.experto.dataobjects.AddUser;
 import com.ticatwolves.experto.users.UserHomeActivity;
+import com.ticatwolves.experto.validator.EmailValidator;
 
 import java.util.Calendar;
 
@@ -58,7 +59,7 @@ public class RegistrationActivity extends AppCompatActivity {
         btnSignIn = (Button) findViewById(R.id.sign_in_button);
         btnSignUp = (Button) findViewById(R.id.sign_up_button);
 
-        inputId = (EditText) findViewById(R.id.user_id);
+        inputId = (EditText) findViewById(R.id.id);
         inputName = (EditText) findViewById(R.id.name);
         inputFName = (EditText) findViewById(R.id.fname);
         inputPhoneNo = (EditText) findViewById(R.id.phoneno);
@@ -118,18 +119,16 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     public void registration(final String id, final String password) {
-        if (TextUtils.isEmpty(id)) {
-            Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+        if (id.length() != 10 || !(id.matches("[0-9]+"))) {
+            Toast.makeText(getApplicationContext(), "ID Should be of length 10 and numerical only", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (TextUtils.isEmpty(password)) {
-            Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+
+        if (TextUtils.isEmpty(password) || password.length() < 6) {
+            Toast.makeText(getApplicationContext(), "Enter password! greater then length 6", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (password.length() < 6) {
-            Toast.makeText(getApplicationContext(), "Password too short, enter minimum 6 characters!", Toast.LENGTH_SHORT).show();
-            return;
-        }
+
         progressBar.setVisibility(View.VISIBLE);
 
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference("Users").child(id);
@@ -137,10 +136,10 @@ public class RegistrationActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 if (snapshot.exists()) {
-                    userregistration(inputEmail.getText().toString(), password, id);
-                    Toast.makeText(getApplicationContext(), "Can reg", Toast.LENGTH_SHORT).show();
+                    userregistration(inputEmail.getText().toString().trim(), password, id);
+                    //Toast.makeText(getApplicationContext(), "Can reg", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "Sorry", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Sorry, You can't register", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -150,13 +149,33 @@ public class RegistrationActivity extends AppCompatActivity {
         });
     }
 
-    public void userregistration(String email, String password, final String id) {
+    public void userregistration(final String email, final String password, final String id) {
         //create user
+        EmailValidator emailValidator = new EmailValidator();
+        if (! emailValidator.validate(email)){
+            Toast.makeText(this,"Please enter correct email",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        final String name = inputName.getText().toString();
+        final String fname = inputFName.getText().toString();
+        final String phone = inputPhoneNo.getText().toString();
+        final String dob = inputDoB.getText().toString();
+
+        if ((TextUtils.isEmpty(name) || TextUtils.isEmpty(fname) || TextUtils.isEmpty(dob))) {
+            Toast.makeText(this,"please fill all details correctly",Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (phone.length() != 10 || !(id.matches("[0-9]+"))) {
+            Toast.makeText(getApplicationContext(), "phone should be of length 10 and numerical only", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(RegistrationActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        Toast.makeText(RegistrationActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(RegistrationActivity.this, "createUserWithEmail:onComplete:" + task.isSuccessful(), Toast.LENGTH_SHORT).show();
                         progressBar.setVisibility(View.GONE);
                         if (!task.isSuccessful()) {
                             Log.e("Error : ", task.getException().toString());
@@ -164,26 +183,24 @@ public class RegistrationActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
                         } else {
                             Log.e("Error", FirebaseAuth.getInstance().getCurrentUser().getUid().toString());
-                            startActivity(new Intent(RegistrationActivity.this, UserHomeActivity.class));
-                            addData(id);
+                            startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
+                            addData(id,name,email,password,fname,dob,phone);
+                            FirebaseAuth.getInstance().signOut();
                             finish();
                         }
                     }
                 });
     }
 
-    public void addData(String id) {
+    public void addData(String id,String name, String email, String password,String fname,String dob, String phone) {
         String gender;
-        String name = inputName.getText().toString();
-        String fname = inputFName.getText().toString();
-        String phone = inputPhoneNo.getText().toString();
-        String email = inputEmail.getText().toString();
-        String dob = inputDoB.getText().toString();
-
         if (inputMale.isChecked()) {
             gender = "Male";
         } else gender = "Female";
-        AddUser addUser = new AddUser(name, fname, email, gender, phone,dob);
+        //long phonno = (long) (Integer.valueOf(phone));
+        String nam = name.substring(0, 1).toUpperCase() + name.substring(1);
+        String fna = fname.substring(0, 1).toUpperCase() + fname.substring(1);
+        AddUser addUser = new AddUser(nam, fna, email, gender, phone,dob,"");
         FirebaseDatabase.getInstance().getReference("Users").child(id).setValue(addUser);
     }
 

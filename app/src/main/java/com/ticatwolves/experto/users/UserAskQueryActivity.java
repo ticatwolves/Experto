@@ -1,12 +1,16 @@
 package com.ticatwolves.experto.users;
 
+import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -25,13 +29,15 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import static android.content.Context.MODE_APPEND;
+
 
 public class UserAskQueryActivity extends AppCompatActivity {
     public TextView problem_statement_input, problem_describtion_input;
     public Button problem_submit_button;
     public Spinner tag_spinner, experts_spinner;
     final List<String> id = new ArrayList<>();
-//    String filter = "fuck noob murder";
+    public CheckBox all_checkbox;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +48,7 @@ public class UserAskQueryActivity extends AppCompatActivity {
         problem_submit_button = (Button) findViewById(R.id.problem_submit_btn);
         tag_spinner = (Spinner) findViewById(R.id.tags_spinner);
         experts_spinner = (Spinner) findViewById(R.id.expert_spinner);
+        all_checkbox = (CheckBox) findViewById(R.id.all);
 
         //final Map<String, List<String>> map = new HashMap<String, List<String>>();
         //final List<String> data = new ArrayList<>();
@@ -95,6 +102,9 @@ public class UserAskQueryActivity extends AppCompatActivity {
         String problem_statement = problem_statement_input.getText().toString();
         String problem_describtion = problem_describtion_input.getText().toString();
 
+        problem_statement = problem_statement.substring(0, 1).toUpperCase() + problem_statement.substring(1);
+        problem_describtion = problem_describtion.substring(0, 1).toUpperCase() + problem_describtion.substring(1);
+
         /*if(problem_statement.toLowerCase().contains(filter.toLowerCase())){
             Log.e("xc","bv");
         }
@@ -103,15 +113,35 @@ public class UserAskQueryActivity extends AppCompatActivity {
         }*/
 
         String tag = tag_spinner.getSelectedItem().toString();
-        String expertid = id.get(experts_spinner.getSelectedItemPosition());
         SessionManager session = new SessionManager(getApplicationContext());
         HashMap<String, String> user = session.getUserDetails();
 
         String name = user.get(SessionManager.KEY_NAME);
 
-        AddProblem addProblem = new AddProblem(problem_statement,problem_describtion,tag,name);
-        Toast.makeText(getApplication(),"Submited",Toast.LENGTH_SHORT).show();
-        FirebaseDatabase.getInstance().getReference("Queries").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(expertid).push().setValue(addProblem);
+        if (TextUtils.isEmpty(problem_statement) || TextUtils.isEmpty(problem_describtion)) {
+            Toast.makeText(getApplicationContext(), "Enter Statement and Description", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        @SuppressLint("WrongConstant") SharedPreferences sh1 = getSharedPreferences("experto",MODE_APPEND);
+        String photo = sh1.getString("photo","");
+
+        AddProblem addProblem = new AddProblem(problem_statement,problem_describtion,tag,name,photo);
+
+        try {
+            if(all_checkbox.isChecked()){
+                FirebaseDatabase.getInstance().getReference("Queries").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("all").push().setValue(addProblem);
+            }
+            else {
+                String expertid = id.get(experts_spinner.getSelectedItemPosition());
+                FirebaseDatabase.getInstance().getReference("Queries").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(expertid).push().setValue(addProblem);
+            }
+        }catch (Exception ex){
+            FirebaseDatabase.getInstance().getReference("Queries").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("all").push().setValue(addProblem);
+        }
+
+
+
         finish();
     }
 

@@ -1,7 +1,9 @@
 package com.ticatwolves.experto.fragment;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,12 +13,17 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -24,6 +31,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.ticatwolves.experto.R;
+import com.ticatwolves.experto.dataobjects.AddUser;
+import com.ticatwolves.experto.users.UserHomeActivity;
 
 import org.w3c.dom.Text;
 
@@ -101,7 +110,7 @@ public class AdminUserFragment extends Fragment {
 
         udatabase = FirebaseDatabase.getInstance().getReference("Users");
         final List<String> roll = new ArrayList<>();
-        final List<String> email = new ArrayList<>();
+        final List<AddUser> userData = new ArrayList<>();
         pd.setMessage("please wait...");
         pd.setCancelable(false);
         pd.show();
@@ -109,15 +118,16 @@ public class AdminUserFragment extends Fragment {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 roll.clear();
-                email.clear();
+                userData.clear();
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    AddUser addUser = postSnapshot.getValue(AddUser.class);
+                    Log.e("data", postSnapshot.toString());
+                    userData.add(addUser);
                     roll.add(postSnapshot.getKey().toString());
-                    Log.e("roll ",postSnapshot.getKey().toString());
-                    email.add(postSnapshot.getValue().toString());
                 }
                 //creating adapter
                 pd.dismiss();
-                adaptor = new UserListAdaptor(getActivity(),roll,email);
+                adaptor = new UserListAdaptor(getActivity(),roll,userData);
                 users.setAdapter(adaptor);
             }
             @Override
@@ -130,35 +140,70 @@ public class AdminUserFragment extends Fragment {
     class UserListAdaptor extends RecyclerView.Adapter<UserListAdaptor.MyOwnHolder> {
 
         Context ctx;
-        List<String> rollno,email;
+        List<String> rollno;
+        List<AddUser> data;
 
-        public UserListAdaptor(Context ctx,List<String> roll,List<String> email){
+        public UserListAdaptor(Context ctx,List<String> roll,List<AddUser> data){//List<String> email){
             this.ctx = ctx;
             this.rollno = roll;
-            this.email = email;
+            this.data = data;
         }
 
         @Override
         public MyOwnHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater myinflat = LayoutInflater.from(ctx);
-            View myOwnView = myinflat.inflate(R.layout.admin_user_view,parent,false);
+            View myOwnView = myinflat.inflate(R.layout.admin_expert_view,parent,false);
             return new MyOwnHolder(myOwnView);
         }
 
         @Override
         public void onBindViewHolder(MyOwnHolder holder, final int position) {
-            holder.rollno.setText(rollno.get(position));
-            holder.icon.setText((String)email.get(position).toUpperCase().substring(0,1));
+            AddUser d = data.get(position);
+            holder.id.setText("User ID : "+rollno.get(position));
+            try {
+                holder.email.setText("Email id : " + d.getEmail());
+                holder.name.setText("Name : " + d.getName());
+                Glide.with(ctx).load(d.getPhotourl()).into(holder.icon);
+            } catch (Exception e){
+                holder.email.setText("");
+                holder.name.setText("");
+            }
             holder.deleteUser.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    FirebaseDatabase.getInstance().getReference("Users").child(rollno.get(position)).removeValue();
-                    Toast.makeText(ctx,"Delete User",Toast.LENGTH_SHORT).show();
+                    PopupMenu popupMenu=new PopupMenu(ctx,v);
+                    MenuInflater inflater= popupMenu.getMenuInflater();
+                    inflater.inflate(R.menu.admin_menu_option,popupMenu.getMenu());
+                    popupMenu.show();
 
-                    rollno.remove(position);
-                    email.remove(position);
-                    notifyItemRemoved(position);
-                    notifyItemRangeChanged(position,rollno.size());
+                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem item) {
+                            int i=item.getItemId();
+                            if (i==R.id.delete){
+                                new AlertDialog.Builder(getActivity())
+                                        .setTitle("Do you want to delete user")
+                                        .setPositiveButton("delete", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int whichButton) {
+                                                FirebaseDatabase.getInstance().getReference("Users").child(rollno.get(position)).removeValue();
+                                                Toast.makeText(ctx,"Delete User",Toast.LENGTH_SHORT).show();
+                                                rollno.remove(position);
+                                                data.remove(position);
+                                                notifyItemRemoved(position);
+                                                notifyItemRangeChanged(position,rollno.size());
+                                                //startActivity(new Intent(Intent.ACTION_VIEW, Uri.fromParts("sms", number, null)).putExtra("sms_body", msg));
+                                            }
+                                        })
+                                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                            public void onClick(DialogInterface dialog, int whichButton) {
+                                            }
+                                        })
+                                        .show();
+                                return true;
+                            }
+                            return false;
+                        }
+                    });
 
                 }
             });
@@ -170,14 +215,16 @@ public class AdminUserFragment extends Fragment {
         }
 
         public class MyOwnHolder extends RecyclerView.ViewHolder {
-            TextView rollno,icon;
-            Button deleteUser;
+            TextView id,email,name;
+            ImageView deleteUser;
+            ImageView icon;
             public MyOwnHolder(View itemView) {
                 super(itemView);
-                rollno = (TextView) itemView.findViewById(R.id.rollno);
-                icon = (TextView) itemView.findViewById(R.id.pimage);
-                deleteUser = (Button) itemView.findViewById(R.id.deleteuser);
-            }
+                id = (TextView) itemView.findViewById(R.id.expert_id_show);
+                icon = (ImageView) itemView.findViewById(R.id.pimage);
+                email = (TextView) itemView.findViewById(R.id.expert_email_show);
+                name = (TextView) itemView.findViewById(R.id.expert_name_show);
+                deleteUser = (ImageView) itemView.findViewById(R.id.delete_expert);           }
         }
     }
 }

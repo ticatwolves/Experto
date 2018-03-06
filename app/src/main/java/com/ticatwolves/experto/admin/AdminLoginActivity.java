@@ -57,19 +57,19 @@ public class AdminLoginActivity extends AppCompatActivity {
                 finish();
             }
             else if (type.equals("expert")){
-                startActivity(new Intent(AdminLoginActivity.this, ExpertHomeActivity.class));
+                startActivity(new Intent(AdminLoginActivity.this, ExpertHomeActivity.class).putExtra("id",user.get(SessionManager.KEY_UID)));
                 finish();
             }
             else {
-                startActivity(new Intent(AdminLoginActivity.this, UserHomeActivity.class));
+                startActivity(new Intent(AdminLoginActivity.this, UserHomeActivity.class).putExtra("id",user.get(SessionManager.KEY_UID)));
                 finish();
             }
         }
 
         setContentView(R.layout.activity_admin_login);
 
-        inputEmail = (EditText) findViewById(R.id.email_admin);
-        inputPassword = (EditText) findViewById(R.id.password_admin);
+        inputEmail = (EditText) findViewById(R.id.id);
+        inputPassword = (EditText) findViewById(R.id.password);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         btnLogin = (Button) findViewById(R.id.admin_login_button);
         btnBack = (Button) findViewById(R.id.back_button);
@@ -90,12 +90,12 @@ public class AdminLoginActivity extends AppCompatActivity {
                 final String password = inputPassword.getText().toString();
 
                 if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Enter id!!!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Enter password!!!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -107,11 +107,11 @@ public class AdminLoginActivity extends AppCompatActivity {
                         String adminemail = (String) snapshot.getValue();
                         if(email.equals(adminemail)){
                             signinAdmin(email,password);
-                            Toast.makeText(getApplicationContext(),"Admin Trying to login",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Hello Admin",Toast.LENGTH_SHORT).show();
                         }
                         else {
                             fetchemailExpert(email,password);
-                            Toast.makeText(getApplicationContext(),"No Login Allowed",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Hello Expert",Toast.LENGTH_SHORT).show();
                         }
                     }
                     @Override
@@ -177,7 +177,7 @@ public class AdminLoginActivity extends AppCompatActivity {
                                     if (snapshot.exists()) {
                                         Log.v("done",snapshot.getValue().toString());
                                         createSession(snapshot.getValue().toString(),null,id,"expert");
-                                        startActivity(new Intent(AdminLoginActivity.this, ExpertHomeActivity.class));
+                                        startActivity(new Intent(AdminLoginActivity.this, ExpertHomeActivity.class).putExtra("id",id));
                                         finish();
                                     }
                                     else {
